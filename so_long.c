@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 21:13:49 by yed-dyb           #+#    #+#             */
-/*   Updated: 2021/12/28 18:56:15 by marvin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "so_long.h"
 #include <pthread.h>
 
@@ -102,16 +90,14 @@ void	init(void)
 int	main(int argc, char **argv)
 {
 	int			fd;
-	char		*str;
 	t_Player	p;
 
 	init();
 	fd = open(argv[1], O_RDONLY);
-	str = read_file(fd);
-	g_map = ft_split(str, '\n');
+	g_map = read_file(fd);
 	if (argc > 2 || !g_map || fd < 0 ||!validate_map(argv[1], g_map, g_size))
 	{
-		printf("\n\033[0;31m=> %s\n\n", "ERROR : MAP NOT VALID OR FILE NOT EXIST");
+		printf("\n\033[0;31m=> %s\n\n", "SOMETHING IS WRONG");
 		return (1);
 	}
 	g_e = malloc(g_itachi * sizeof(t_Enemy));

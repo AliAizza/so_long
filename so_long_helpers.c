@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long_helpers.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/11 21:13:44 by yed-dyb           #+#    #+#             */
-/*   Updated: 2021/12/28 19:22:38 by marvin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "so_long.h"
 
-char	*read_file(int fd)
+char	**read_file(int fd)
 {
 	char	*str;
 	char	*line;
@@ -32,7 +20,7 @@ char	*read_file(int fd)
 		g_size++;
 	}
 	close(fd);
-	return (str);
+	return (ft_split(str, '\n'));
 }
 
 void	get_player_and_enemies(char **map, t_Player *p, t_Enemy *e)

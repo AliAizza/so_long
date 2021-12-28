@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   map_validation.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 12:25:17 by yed-dyb           #+#    #+#             */
-/*   Updated: 2021/12/28 18:39:44 by marvin           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "so_long.h"
 
 int	check_top_bottom_wall(char **map, int index)
@@ -104,6 +92,9 @@ int	validate_map(char *path, char **map, int count)
 	if (!check_map_components(map) || !check_lines(map))
 		err = 0;
 	if (!err)
-		return (0);
+	{
+		printf("\n\033[0;31m=> %s\n\n", "INVALID MAP!");
+		exit(1);
+	}
 	return (1);
 }
