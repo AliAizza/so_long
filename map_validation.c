@@ -58,14 +58,14 @@ int	check_map_components(char **map)
 
 int	check_lines(char **map)
 {
-	int		i;
-	size_t	line_len;
+	int	i;
+	int	len;
 
-	line_len = ft_strlen(map[0]);
+	len = ft_strlen(map[0]);
 	i = 1;
 	while (map[i])
 	{
-		if (ft_strlen(map[i]) != line_len)
+		if (ft_strlen(map[i]) != len)
 			return (0);
 		i++;
 	}

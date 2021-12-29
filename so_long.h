@@ -4,8 +4,6 @@
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "libft/libft.h"
-# include "get_next_line/get_next_line.h"
 
 # define PIXELS 50
 
@@ -37,6 +35,14 @@ int			g_frame;
 char		*g_door;
 char		*g_naruto;
 
+char	*ft_itoa(int n);
+int		ft_strlen(char *str);
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
+int		ft_checkline(char *s);
+char	*get_next_line(int fd);
+char	*ft_substr(char *s, int start, int len);
+int		ft_strncmp(char *s1, char *s2, int n);
 int		validate_map(char *path, char **map, int count);
 void	render_background(char **map, t_vars vars);
 void	render_image(t_vars vars, char *path, int i, int j);

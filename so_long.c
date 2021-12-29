@@ -95,7 +95,8 @@ int	main(int argc, char **argv)
 	init();
 	fd = open(argv[1], O_RDONLY);
 	g_map = read_file(fd);
-	if (argc > 2 || !g_map || fd < 0 ||!validate_map(argv[1], g_map, g_size))
+	validate_map(argv[1], g_map, g_size);
+	if (argc > 2 || !g_map || fd < 0)
 	{
 		printf("\n\033[0;31m=> %s\n\n", "SOMETHING IS WRONG");
 		return (1);

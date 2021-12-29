@@ -14,7 +14,7 @@ char	**read_file(int fd)
 			printf("\n\033[0;31m=> EPMTY LINE IN THE MAP\n\n");
 			exit(1);
 		}
-		str = ft_str_join(str, line);
+		str = ft_strjoin(str, line);
 		free(line);
 		line = get_next_line(fd);
 		g_size++;
