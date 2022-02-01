@@ -1,10 +1,16 @@
-#include "so_long.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/01 12:10:36 by aaizza            #+#    #+#             */
+/*   Updated: 2022/02/01 12:10:36 by aaizza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	close_window(t_vars *vars)
-{
-	mlx_destroy_window(vars->mlx, vars->win);
-	exit(1);
-}
+#include "so_long.h"
 
 static char	*ft_convert(long int nb, int size, int sign)
 {
@@ -52,16 +58,6 @@ char	*ft_itoa(int n)
 		nb /= 10;
 	}
 	return (ft_convert(nbr, size, sign));
-}
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
 
 int	ft_strncmp(char *s1, char *s2, int n)

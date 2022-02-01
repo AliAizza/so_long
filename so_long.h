@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/01 12:10:32 by aaizza            #+#    #+#             */
+/*   Updated: 2022/02/01 15:37:10 by aaizza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
 # include <mlx.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # define PIXELS 50
 
@@ -59,6 +73,8 @@ void	*get_image(t_vars vars, char *path);
 int		validate_component(int p, int e);
 void	check_collision(t_Player *p);
 int		close_window(t_vars *vars);
-char	*read_file(int fd);
+char	**read_file(int fd);
+char	**ft_split(char *s, char c);
+char	*ft_strdup(const char *s1);
 
 #endif

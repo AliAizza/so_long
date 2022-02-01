@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   moves.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/01 12:10:19 by aaizza            #+#    #+#             */
+/*   Updated: 2022/02/01 15:34:28 by aaizza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	move_down(char **map, t_Player *p)
@@ -22,7 +34,7 @@ void	move_left(char **map, t_Player *p)
 		p->x = p->x + 1;
 	if (map[p->y][p->x + 1] == 'E' && g_ramen == g_total_ramen)
 		p->x = p->x + 1;
-	g_naruto = "./images/narutoleft.xpm";
+	g_naruto = "./images/narutoright.xpm";
 }
 
 void	move_right(char **map, t_Player *p)
@@ -31,7 +43,7 @@ void	move_right(char **map, t_Player *p)
 		p->x = p->x - 1;
 	if (map[p->y][p->x - 1] == 'E' && g_ramen == g_total_ramen)
 		p->x = p->x - 1;
-	g_naruto = "./images/narutoright.xpm";
+	g_naruto = "./images/narutoleft.xpm";
 }
 
 int	validate_component(int p, int e)

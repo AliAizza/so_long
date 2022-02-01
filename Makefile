@@ -1,26 +1,34 @@
-SRC = so_long.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c so_long_helpers.c moves.c map_validation.c render.c exit.c
-LIBFT = libft/libft.a
-OBJ = ${SRC:.c=.o}
-GFLAGS = -Wall -Wextra -Werror
-NAME = so_long
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/01 12:10:11 by aaizza            #+#    #+#              #
+#    Updated: 2022/02/01 13:05:57 by aaizza           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-all: $(NAME)
+SRC= get_next_line.c get_next_line_utils.c map_validation.c moves.c render.c \
+	so_long.c so_long_helpers.c utils.c exit.c split.c
 
-%.o: %.c
-	$(CC) $(GFLAGS) -c $< -o $@
+NAME= so_long
 
-$(NAME): $(OBJ)
-	cd libft && make && cd ..
-	$(CC) $(OBJ) $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+CC= gcc
 
-clean :
-	cd libft && make clean && cd ..
-	rm -rf $(OBJ)
+FLAGS= -Wall -Wextra -Werror -lmlx -framework OpenGL -framework AppKit
 
-fclean : clean
-	cd libft && make fclean && cd ..
-	rm -rf $(NAME)
+all:		${NAME}
 
-re : fclean all
+${NAME}:	${SRC}
+			${CC} ${FLAGS} ${SRC} -o ${NAME}
 
-.PHONY: all clean fclean re
+clean:
+			rm -f ${NAME}
+
+fclean:		clean
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
