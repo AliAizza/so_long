@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:32 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 15:37:10 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/01 22:16:26 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int			g_frame;
 char		*g_door;
 char		*g_naruto;
 
+void	empty_map(char *line);
 char	*ft_itoa(int n);
 int		ft_strlen(char *str);
 int		ft_strlen(char *str);

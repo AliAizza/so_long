@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:26 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 12:10:28 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/01 22:16:37 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ char	**read_file(int fd)
 {
 	char	*str;
 	char	*line;
+	char	**map;
 
 	line = get_next_line(fd);
+	empty_map(line);
 	str = NULL;
 	while (line)
 	{
@@ -32,7 +34,9 @@ char	**read_file(int fd)
 		g_size++;
 	}
 	close(fd);
-	return (ft_split(str, '\n'));
+	map = ft_split(str, '\n');
+	free(str);
+	return (map);
 }
 
 void	get_player_and_enemies(char **map, t_Player *p, t_Enemy *e)
