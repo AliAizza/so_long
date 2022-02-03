@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:32 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 22:16:26 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/03 15:01:56 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	get_player_and_enemies(char **map, t_Player *p, t_Enemy *e);
 void	check_coins_and_exit(t_vars g_vars, char **map, t_Player *p);
 void	get_direction(char **map, t_Enemy *e, int i);
 void	*get_image(t_vars vars, char *path);
-int		validate_component(int p, int e);
+int		validate_component(int p, int e, char **map);
 void	check_collision(t_Player *p);
 int		close_window(t_vars *vars);
 char	**read_file(int fd);

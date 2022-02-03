@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:19 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 15:34:28 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/03 15:07:08 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,27 @@ void	move_right(char **map, t_Player *p)
 	g_naruto = "./images/narutoleft.xpm";
 }
 
-int	validate_component(int p, int e)
+int	validate_component(int p, int e, char **map)
 {
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'E' 
+				&& map[i][j] != 'P' && map[i][j] != 'C' && map[i][j] != 'Y')
+			{
+				printf("\n\033[0;31m=> %s\n\n", "WRONG VARIABLE!");
+				exit(1);
+			}
+			j++;
+		}
+		i++;
+	}
 	if (e < 1 || g_total_ramen < 1 || p != 1)
 		return (0);
 	return (1);

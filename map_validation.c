@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:14 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 22:14:54 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/03 15:01:22 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	check_map_components(char **map)
 				e++;
 		}
 	}
-	return (validate_component(p, e));
+	return (validate_component(p, e, map));
 }
 
 int	check_lines(char **map)
