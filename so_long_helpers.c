@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:26 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 22:16:37 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/05 21:59:55 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,19 +71,19 @@ void	check_coins_and_exit(t_vars vars, char **map, t_Player *p)
 {
 	char	*moves;
 
+	if (map[p->y][p->x] == 'C')
+	{
+		g_ramen++;
+		map[p->y][p->x] = 0;
+		if (g_ramen == g_total_ramen)
+			g_door = "./images/openeddoor.xpm";
+		render_pixel(vars, p->y, p->x);
+	}
 	if (map[p->y][p->x] == 'E' && g_ramen == g_total_ramen)
 	{
 		printf("\n\033[0;32m=> YOU WIN\n\n");
 		exit(1);
 	}
-	if (map[p->y][p->x] == 'C')
-	{
-		g_ramen++;
-		map[p->y][p->x] = 0;
-		render_pixel(vars, p->y, p->x);
-	}
-	if (g_ramen == g_total_ramen)
-		g_door = "./images/openeddoor.xpm";
 	moves = ft_itoa(g_move);
 	mlx_string_put(vars.mlx, vars.win, 10, 10, 0x00000000, moves);
 	free(moves);
@@ -94,6 +94,7 @@ void	get_direction(char **map, t_Enemy *e, int i)
 	if (e[i].dir)
 	{
 		if (map[e[i].y + 1][e[i].x] != '1'
+			&& map[e[i].y + 1][e[i].x] != 'E'
 			&& map[e[i].y + 1][e[i].x] != 'C')
 			e[i].y = e[i].y + 1;
 		else
@@ -102,7 +103,8 @@ void	get_direction(char **map, t_Enemy *e, int i)
 	else
 	{
 		if (map[e[i].y - 1][e[i].x] != '1'
-			&& map[e[i].y + 1][e[i].x] != 'C')
+			&& map[e[i].y - 1][e[i].x] != 'E'
+			&& map[e[i].y - 1][e[i].x] != 'C')
 			e[i].y = e[i].y - 1;
 		else
 			e[i].dir = 1;

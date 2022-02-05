@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:29 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/01 21:42:04 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/05 22:09:06 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int	main(int argc, char **argv)
 	g_vars.win = mlx_new_window(g_vars.mlx, (ft_strlen(g_map[0])) * PIXELS, \
 		g_size * PIXELS, "so_long");
 	render_background(g_map, g_vars);
-	mlx_key_hook(g_vars.win, move_player, &p);
+	mlx_hook(g_vars.win, 2, 1L << 0, move_player, &p);
 	render_map(g_map, g_vars, &p, 1);
 	mlx_loop_hook(g_vars.mlx, move_enemy, &p);
 	mlx_hook(g_vars.win, 17, 0, close_window, &g_vars);
