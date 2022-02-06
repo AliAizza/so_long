@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:26 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/06 01:29:44 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 16:28:16 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	check_coins_and_exit(t_vars vars, char **map, t_Player *p)
 
 void	get_direction(char **map, t_Enemy *e, int i)
 {
-	if (e[i].dir)
+	if (e[i].dir == 1)
 	{
 		if (map[e[i].y + 1][e[i].x] != '1'
 			&& map[e[i].y + 1][e[i].x] != 'E'
