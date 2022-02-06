@@ -6,12 +6,11 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:29 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/06 02:11:54 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 02:21:11 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <pthread.h>
 
 t_vars		g_vars;
 char		**g_map;
