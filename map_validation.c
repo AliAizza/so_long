@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:14 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/03 15:01:22 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:30:13 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	validate_map(char *path, char **map, int count)
 		err = 0;
 	if (!err)
 	{
-		printf("\n\033[0;31m=> %s\n\n", "INVALID MAP!");
+		ft_printf("\n\033[0;31m=> %s\n\n", "INVALID MAP!");
 		exit(1);
 	}
 	return (1);

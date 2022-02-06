@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:19 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/03 18:01:12 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:30:02 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	validate_component(int p, int e, char **map)
 			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'E'
 				&& map[i][j] != 'P' && map[i][j] != 'C' && map[i][j] != 'Y')
 			{
-				printf("\n\033[0;31m=> %s\n\n", "WRONG VARIABLE!");
+				ft_printf("\n\033[0;31m=> %s\n\n", "WRONG VARIABLE!");
 				exit(1);
 			}
 			j++;

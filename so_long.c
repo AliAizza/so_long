@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:29 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/05 22:09:06 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:29:18 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check_collision(t_Player *p)
 	{
 		if (g_e[i].x == p->x && g_e[i].y == p->y)
 		{
-			printf("\n\033[0;31m=> YOU LOSE\n\n");
+			ft_printf("\n\033[0;31m=> YOU LOSE\n\n");
 			exit(1);
 		}
 		i++;
@@ -110,7 +110,7 @@ int	main(int argc, char **argv)
 	validate_map(argv[1], g_map, g_size);
 	if (argc > 2 || !g_map || fd < 0)
 	{
-		printf("\n\033[0;31m=> %s\n\n", "SOMETHING IS WRONG");
+		ft_printf("\n\033[0;31m=> %s\n\n", "SOMETHING IS WRONG");
 		return (1);
 	}
 	g_e = malloc(g_itachi * sizeof(t_Enemy));

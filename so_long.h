@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:32 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/03 15:01:56 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:39:07 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define SO_LONG_H
 
 # include <mlx.h>
-# include <stdio.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 # define PIXELS 50
 
@@ -77,5 +77,8 @@ int		close_window(t_vars *vars);
 char	**read_file(int fd);
 char	**ft_split(char *s, char c);
 char	*ft_strdup(const char *s1);
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
 
 #endif

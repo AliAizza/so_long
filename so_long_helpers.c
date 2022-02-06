@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:26 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/05 21:59:55 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:29:44 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	**read_file(int fd)
 	{
 		if (line[0] == '\n')
 		{
-			printf("\n\033[0;31m=> EPMTY LINE IN THE MAP\n\n");
+			ft_printf("\n\033[0;31m=> EPMTY LINE IN THE MAP\n\n");
 			exit(1);
 		}
 		str = ft_strjoin(str, line);
@@ -81,7 +81,7 @@ void	check_coins_and_exit(t_vars vars, char **map, t_Player *p)
 	}
 	if (map[p->y][p->x] == 'E' && g_ramen == g_total_ramen)
 	{
-		printf("\n\033[0;32m=> YOU WIN\n\n");
+		ft_printf("\n\033[0;32m=> YOU WIN\n\n");
 		exit(1);
 	}
 	moves = ft_itoa(g_move);

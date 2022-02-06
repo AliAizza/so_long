@@ -6,7 +6,7 @@
 /*   By: aaizza <aaizza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/01 12:10:23 by aaizza            #+#    #+#             */
-/*   Updated: 2022/02/05 22:09:11 by aaizza           ###   ########.fr       */
+/*   Updated: 2022/02/06 01:11:57 by aaizza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	render_map(char **map, t_vars vars, t_Player *p, int rr)
 		}
 		i++;
 	}
-	if (g_ramen == g_total_ramen)
-			g_door = "./images/openeddoor.xpm";
 }
 
 void	render_background(char **map, t_vars vars)
